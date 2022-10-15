@@ -1,62 +1,3 @@
-let pOne = [];
-let pTwo = [];
-let discardPile = []
-let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
-
-let cards = [];
-let round = 1;
-
-const rawBtn = document.getElementsByClassName('draw');
-const playBtn = document.getElementsByClassName('play-cards')
-const discard = document.getElementsByClassName('discard');
-const playerContainer = document.getElementById('playerContainer')
-
-
-
-function repeat(n, action) {
-     for (let i = 0; i < n; i++) {
-          action(i);
-     }
-}
-
-repeat(8, i => {
-     cards.push(`On round ${i + 1}, you get ${i + 3} cards`);
-     while (alphabet.length) {
-          pOne = alphabet.splice(alphabet.length * Math.random(), 3);
-
-          pTwo = alphabet.splice(alphabet.length * Math.random(), 3);
-     }
-
-});
-
-
-
-// console.log(cards);
-// pOne = alphabet.splice(0, 3);
-// pTwo = alphabet.splice(0, 3);
-
-
-// pOne = alphabet.splice(0, 3);
-// pTwo = alphabet.splice(0, 3)
-// console.log(pOne);
-// console.log(pTwo);
-
-
-
-// while loop as a counter
-// function calculateHand(rounds) {
-//           let cards = 0;
-//      for (rounds = rounds; rounds < 9; rounds++) {
-//           cards = rounds.value += 2
-//           rounds += 1
-//           const newMessage = () => {`
-// <h3>Round : ${rounds}</h3>`
-// }
-//           divEl = document.querySelector('#divOne').value
-//        }
-//      console.log(cards)
-// }
-
 // Quiddlr
 /*
   Rules:
@@ -96,6 +37,36 @@ repeat(8, i => {
    }
   
 */
+let pOne = [];
+let pTwo = [];
+let discardPile = []
+let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
+
+let cards = [];
+let round = 1;
+
+const rawBtn = document.getElementsByClassName('draw');
+const playBtn = document.getElementsByClassName('play-cards')
+const discard = document.getElementsByClassName('discard');
+const playerContainer = document.getElementById('playerContainer')
+
+
+
+function repeat(n, action) {
+     for (let i = 0; i < n; i++) {
+          action(i);
+     }
+}
+
+repeat(8, i => {
+     cards.push(`On round ${i + 1}, you get ${i + 3} cards`);
+     while (alphabet.length) {
+          pOne = alphabet.splice(alphabet.length * Math.random(), 3);
+
+          pTwo = alphabet.splice(alphabet.length * Math.random(), 3);
+     }
+
+});
 
 const buttonEl = document.querySelector('.button')
 
@@ -158,15 +129,7 @@ class Game {
           //console.log("round: ", repeat(pOne))
           console.log("cards: ", game.minCards)
      } 
-     // decision(bool) {
-     //      let booleanValue = console.log(Math.random() < 0.5); 
-     //      if (booleanValue === true){
-     //           console.log('yes')
-     //      } 
-     //           else {console.log('no')}
-     //      //50% probability of getting true)
-     // }
-     // reset()
+     
 }
 const game = new Game()
 //------------------------------
@@ -184,3 +147,14 @@ function displayCards() {
 
 newDeck()
 displayCards()
+
+//Old Notes
+// decision(bool) {
+     //      let booleanValue = console.log(Math.random() < 0.5); 
+     //      if (booleanValue === true){
+     //           console.log('yes')
+     //      } 
+     //           else {console.log('no')}
+     //      //50% probability of getting true)
+     // }
+     // reset()
