@@ -4,7 +4,14 @@ let discardPile = []
 let alphabet = 'abcdefghijklmnopqrstuvwxyz'.split('');
 
 let cards = [];
-let round = 0;
+let round = 1;
+
+const rawBtn = document.getElementsByClassName('draw');
+const playBtn = document.getElementsByClassName('play-cards')
+const discard = document.getElementsByClassName('discard');
+const playerContainer = document.getElementById('playerContainer')
+
+
 
 function repeat(n, action) {
      for (let i = 0; i < n; i++) {
@@ -124,10 +131,10 @@ class Deck {
                this.deck.splice(random2, 1)
 
           }
-          console.log("player1: ", p1.hand.join(','))
-          let p1Hand = p1.hand.join(',')
-          console.log("player2: ", p2.hand.join(','))
-          let p2Hand = p2.hand.join(',')
+          console.log("player1: ", p1.hand.join(' '))
+          let p1Hand = p1.hand.join(' ')
+          console.log("player2: ", p2.hand.join(' '))
+          let p2Hand = p2.hand.join(' ')
           
      }
 }
@@ -162,4 +169,18 @@ class Game {
      // reset()
 }
 const game = new Game()
+//------------------------------
 
+//look at players cards atm and put them on screen
+function displayCards() {
+     playerContainer.innerHTML =   P1.hand.map((card)=> {
+          return (
+               `<h1>${card}</h1>`
+          )
+
+     })
+}
+
+
+newDeck()
+displayCards()
